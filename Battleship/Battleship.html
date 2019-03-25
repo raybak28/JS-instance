@@ -1,0 +1,100 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title>Battleship</title>
+  <script type="text/javascript" src="jquery-3.3.1.js"></script> 
+</head>
+
+<body>
+
+<style type="text/css">
+  
+h2 {position: absolute; left: 690px;}
+#usershipstitle {position: absolute; left: 460px;}
+#compshipstitle {position: absolute; left: 920px;}
+#rules { color: RoyalBlue; position: absolute; left: 200px; right: 200px}
+  
+table, td {
+  border: 2px solid black;
+}
+
+table {
+  border-collapse: collapse;
+  width: 400px;
+}
+
+
+td {
+  height: 40px;
+}
+
+
+#button {position: absolute; left: 680px;}
+
+.ship-cell { background-color: SteelBlue; }
+
+.miss { background-color: Silver; }
+.damaged { background-color: Orange; }
+.killed { background-color: OrangeRed; }
+.dot {background: url('Point.jpg') no-repeat;}
+
+  </style>
+
+  <h2>BATTLESHIP</h2>
+  
+  <br></br>
+    
+  <h3 id="usershipstitle">User ships</h3>
+  <h3 id="compshipstitle">Computer ships</h3>
+  
+  <br></br>
+  <br></br>
+    
+  <table id="t1" style=" table-layout:fixed; float:left; margin:0 80px 0 300px;">  
+  
+      
+      <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+  
+
+   </table>
+   
+   <table id="t2">
+      
+      <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+  
+
+   </table>
+   
+    <br></br>  
+	  
+   <input type="button" id="button" value="Let's start the game!" />  
+   
+   <audio id="audio" src="Shotsound.mp3" type="audio/mp3"></audio> 
+   
+   <br></br>  
+   
+   <h5 id="rules">Place your battleships in the "User ships" area by clicking the mouse. You should install following configuration: 1 x four-deck ship; 2 x three-deck ship; 3 x two-deck ship; 4 x one-deck ship. Leave at least one cell between the different ships. When you are ready press the button "Let's start the game!" and fire first. Turn on the sound. Good luck!</h5>
+   
+   <script src="BattleshipFunctions.js"></script>  
+   
+
+</body>
+</html>
