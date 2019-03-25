@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Accordeon</title>
+	<style type="text/css">
+         
+		 #accordeon {
+    width: 350px;
+    border: 10px solid #fff;
+    box-shadow: 0 0 10px grey;
+    margin: 10px;
+}
+
+.acc-head {
+    padding: 5px 10px;
+    background: #c0c0c0;
+    cursor: pointer;
+}
+
+.acc-body {
+    padding: 10px;
+    border-bottom: 1px solid #c0c0c0;
+    margin-bottom: 5px;
+    display: none;
+		 
+	</style>
+		
+		
+	<script type="text/javascript" src="jquery-3.3.1.js"></script> 
+	
+</head>
+<body>
+<div id="accordeon">
+      <div class="acc-head">
+        Moscow
+      </div>
+      <div class="acc-body">
+        Moscow is the capital and most populous city of Russia, with 13.2 million residents within the city limits and 17.1 million within the urban area. Moscow is a major political, economic, cultural, and scientific centre of Russia and Eastern Europe, as well as the largest city (both by population and by area) entirely on the European continent. By broader definitions Moscow is among the world's largest cities, being the 14th largest metro area, the 18th largest agglomeration, the 14th largest urban area, and the 11th largest by population within city limits worldwide
+      </div>
+      <div class="acc-head">
+        Paris
+      </div>
+      <div class="acc-body">
+        Paris is the capital and most populous city of France, with an area of 105 square kilometres (41 square miles) and a population of 2,206,488. Since the 17th century, Paris has been one of Europe's major centres of finance, commerce, fashion, science, music, and painting.
+      </div>
+      <div class="acc-head">
+        London
+      </div>
+      <div class="acc-body">
+        London is the capital and most populous city of England and the United Kingdom. Standing on the River Thames in the south east of the island of Great Britain, London has been a major settlement for two millennia. It was founded by the Romans, who named it Londinium. London's ancient core, the City of London, largely retains its 1.12-square-mile (2.9 km2) medieval boundaries. 
+      </div>
+	</div>
+
+	
+	<script>
+	$(document).ready(function() {  //add onclick event for acc.head
+  	$('#accordeon .acc-head').on('click', f_acc);
+});
+ 
+function f_acc(){
+  $('#accordeon .acc-body').not($(this).next()).slideUp(1000);  //hide the rest of headers
+  $(this).next().slideToggle(2000);   // show or hide necessary header
+}	
+	</script>
+	
+</body>
+</html>

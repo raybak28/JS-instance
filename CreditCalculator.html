@@ -1,0 +1,144 @@
+   
+   <!DOCTYPE HTML>
+   <html>
+     <head>
+        <meta charset="UTF-8">
+        <title>Credit Calculator</title>  
+		<script type="text/javascript" src="jquery-3.3.1.js"></script> 
+		<style type="text/css">
+         body {
+         color: DarkBlue;
+         background-color: Cornsilk }
+		 </style>
+		 
+     </head>
+     <body>
+   <h1>Credit Calculator</h1>
+   
+  
+  <h2>Type of credit</h2>
+  <select name="cr_type" id="cr_type">
+    <option value="empt"></option>
+    <option value="estate">Real estate</option>
+    <option value="car">Car</option>
+    <option value="cons">Consumer</option>
+  </select>
+  
+  
+  
+  <h2>Term</h2>
+  <select name="term" id="term">
+    <option value="empt"></option>
+    <option value="3">3 months</option>
+    <option value="6">6 months</option>
+    <option value="12">1 year</option>
+	<option value="24">2 year</option>
+	<option value="36">3 year</option>
+	<option value="60">5 year</option>
+	<option value="84">7 year</option>
+	<option value="120">10 year</option>
+	<option value="180">15 year</option>
+	<option value="240">20 year</option>
+  </select>
+  
+  <h2>Currency</h2>
+  <select name="cur" id="cur">
+    <option value="empt"></option>
+    <option value="BIN">BIN</option>
+	<option value="RUB">RUB</option>
+    <option value="USD">USD</option>
+  </select>
+  
+  <label for="sum">Required sum</label><input type="text" id="sum">
+   
+  
+<p>Persentage rate, %: <b id="pers_rate"></b>   
+<p>Total sum: <b id="total"></b> 
+<p>Sum of percentages: <b id="percent"></b> 
+<p>Monthly fee: <b id="fee"></b> 
+
+    
+	<script>
+	    var rate = {"BIN":16, "RUB":8.5, "USD":6.3}
+		var cr_type = document.getElementById('cr_type');
+		var term = document.getElementById('term');
+		var cur = document.getElementById('cur');
+		var sum = document.getElementById('sum');
+		
+		
+		// Credit type, Term, Currency, Sum are defenitive values, need to assign the events
+		cr_type.addEventListener('change', func1);
+		term.addEventListener('change', func1);
+		cur.addEventListener('change', func1);
+		sum.addEventListener('keyup', func1);
+		
+		
+		var answer = 0;
+		
+		function func1() {
+		
+		
+		        
+		    total.innerHTML = '';
+			pers_rate.innerHTML = '';
+			percent.innerHTML = '';
+			fee.innerHTML = '';
+			pers_rate.innerHTML = rate[cur.value];
+			answer = (+sum.value + +(sum.value * term.value / 12 * rate[cur.value] / 100));	//Total payment				
+			total.innerHTML = answer;
+			percent.innerHTML = sum.value * term.value / 12 * rate[cur.value] / 100; //percent payment
+			fee.innerHTML = answer / term.value;   // Monthly payment
+				
+				
+			
+			$('#term option[value=3]').show();
+			$('#term option[value=6]').show();
+			$('#term option[value=12]').show();
+			$('#term option[value=24]').show();
+			$('#term option[value=36]').show();
+			$('#term option[value=60]').show();
+			$('#term option[value=84]').show();
+			$('#term option[value=120]').show();
+			$('#term option[value=180]').show();
+			$('#term option[value=240]').show();
+						
+			
+			// In case of Real estate credit 3m, 6m, 1y, 2y, 3y Terms are unavailable 	
+			if (cr_type.value == 'estate') {
+		    $('#term option[value=3]').hide();
+			$('#term option[value=6]').hide();
+			$('#term option[value=12]').hide();
+			$('#term option[value=24]').hide();
+			$('#term option[value=36]').hide();
+			}	
+						
+			// In case of Car credit 3m, 6m, 10y, 15y, 20y Terms are unavailable 	
+		    if (cr_type.value == 'car') {
+		    
+			$('#term option[value=3]').hide();
+			$('#term option[value=6]').hide();
+			$('#term option[value=120]').hide();
+			$('#term option[value=180]').hide();
+			$('#term option[value=240]').hide();
+			}	
+						
+			// In case of Consumer credit 5y, 7y, 10y, 15y, 20y Terms are unavailable 		
+	        if (cr_type.value == 'cons') {
+		    
+			$('#term option[value=60]').hide();
+			$('#term option[value=84]').hide();
+			$('#term option[value=120]').hide();
+			$('#term option[value=180]').hide();
+			$('#term option[value=240]').hide();
+			}	
+
+            			
+		}	
+
+         </script>
+     </body>
+   </html>
+   
+   
+ 
+

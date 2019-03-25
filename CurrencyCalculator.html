@@ -1,0 +1,66 @@
+   <!--Реализуйте калькулятор валют. Есть два селекта - селект с исходной валюты, селект с той валютой, в которую мы хотим перевести деньги, инпут, в который вводится сумма для обмена. Курсы валют храните в массиве. Сделайте так, чтобы в селектах нельзя было выбрать две одинаковых валюты. -->
+   <!DOCTYPE HTML>
+   <html>
+     <head>
+        <meta charset="UTF-8">
+        <title>Calculator</title>  
+     </head>
+     <body>
+   <h1>Exchange calculator</h1>
+   
+  
+  <h2>Buy</h2>
+  <select name="first_cur" id="first_cur">
+    <option value="rub" selected>Rubles</option>
+    <option value="usd" selected>Dollars</option>
+    <option value="eur" selected>Euros</option>
+  </select>
+  
+  <label for="sum">Sum to buy:</label><input type="text" id="sum">
+  
+  <h2>For currency</h2>
+  <select name="second_cur" id="second_cur">
+    <option value="rub" selected>Rubles</option>
+    <option value="usd" selected>Dollars</option>
+    <option value="eur" selected>Euros</option>
+  </select>
+  
+  
+<p>Total to pay: <b id="result"></b> <b id="sec"></b>      
+         
+		 <script>
+		    var exch_rate = {"rub":1.00, "usd":65.00, "eur":73.00};
+			var first_cur = document.getElementById('first_cur');
+			var second_cur = document.getElementById('second_cur');
+			var sum = document.getElementById('sum');
+			var result = document.getElementById('result');
+			var answer = 0;
+			
+			first_cur.addEventListener('change', count);
+            second_cur.addEventListener('change', count);
+            sum.addEventListener('keyup', count);
+			
+			
+			function count() {
+			if (first_cur.value != second_cur.value) {
+			    result.innerHTML = '';
+			    answer = exch_rate[first_cur.value] / exch_rate[second_cur.value] * sum.value;
+				result.innerHTML = answer;
+				sec.innerHTML = second_cur.value;
+			} else {
+			alert("Choose another currency");
+			       }
+			}
+			
+			
+			
+			
+		</script>
+   
+     
+     </body>
+   </html>
+   
+   
+ 
+
