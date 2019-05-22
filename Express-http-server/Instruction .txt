@@ -1,0 +1,7 @@
+Express Http-server:
+
+1. Make sure that you have NPM installed
+2. Install Express (npm install express)
+3. To handle HTTP POST request install body-parser (npm install body-parser --save)
+4. Download index.html and search-engine.js into your folder. Navigate to this folder in the Command Line and run .js file (node search-engine.js)
+5. Open http://localhost:8080 in your browser
