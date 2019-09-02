@@ -1,0 +1,88 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+.cloth {
+  padding: 5px; 
+	max-width: 70%; 
+}
+
+.title {  
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 32px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.detailed-title {
+  color: blue;
+  max-width: 420px;
+  margin: 10px auto 0;
+  font-size: 32px;
+  border-style: inset;
+  border-width: 5px;
+  border-color: SkyBlue;
+  text-align: center;
+}
+
+.detailed-main {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.detailed-cloth {
+  display: flex;
+  flex-direction: column;
+}
+
+.detailed-cloth img {
+  padding: 5px;
+  width: 200px;
+  height: 200px;
+}
+
+.detailed-text {
+  margin: 0 100px;
+  flex: 1;
+}
+
+.detailed-price {
+  color: red;
+}
+
+.main-bar-button {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+
+}
+
+.clear-all-button{
+  margin-left: 10px;
+}
+
+.searchbar {
+  max-width: 100px;
+  margin: 0 300px 0 auto; 
+ }
