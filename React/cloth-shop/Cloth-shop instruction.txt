@@ -1,0 +1,10 @@
+
+To watch the cloth-shop application you need Node.js and npm installed:
+
+1. Install create-react-app (in cmd type: npm install -g create-react-app)
+2. Navigate to the folder you are going to install this application (for example: cd C:/react)
+3. Create application (create-react-app cloth-shop)
+4. New folder "cloth-shop" will be created with necessary file structure
+5. Put "public" and "src" folders from github repository instead of existing ones
+6. Go to created folder "cloth-shop" from cmd (cd C:/react/cloth-shop) and launch the application (npm start)
+7. Now you can see the application in your browser by http://localhost:3000/
